@@ -4,7 +4,9 @@ function Nav() {
   return (
     <nav className="bg-gray-800">
       <div className="flex items-center justify-around p-4 text-white">
-        <h3 className="text-4xl">FakeStore</h3>
+        <Link to="/">
+          <h3 className="cursor-pointer text-4xl">FakeStore</h3>
+        </Link>
         <ul className="flex gap-6 text-xl text-gray-200">
           <Link to="/">
             <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
@@ -16,7 +18,7 @@ function Nav() {
               Store
             </li>
           </Link>
-          <Link to="about">
+          <Link to="/about">
             <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
               About
             </li>

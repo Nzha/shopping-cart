@@ -1,7 +1,7 @@
 function About() {
   return (
     <div>
-      <div>About</div>
+      <div className="flex justify-center pt-8 text-2xl">About</div>
     </div>
   );
 }
