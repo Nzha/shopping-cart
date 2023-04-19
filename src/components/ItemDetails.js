@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function ItemDetails() {
+function ItemDetails({ addToCart }) {
   const { id } = useParams();
   const [item, setItem] = useState({});
 
@@ -138,7 +138,10 @@ function ItemDetails() {
                 <span className="title-font text-2xl font-medium text-gray-900">
                   ${item.price}
                 </span>
-                <button className="ml-auto flex rounded border-0 bg-red-500 px-6 py-2 text-white hover:bg-red-600 focus:outline-none">
+                <button
+                  className="ml-auto flex rounded border-0 bg-red-500 px-6 py-2 text-white hover:bg-red-600 focus:outline-none"
+                  onClick={() => addToCart(item)}
+                >
                   Add to cart
                 </button>
               </div>
