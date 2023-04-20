@@ -1,12 +1,16 @@
-function CartItem({ item }) {
+function CartItem({ item, cart, setCart }) {
   console.log(item);
+
+  const deleteItem = () => {
+    setCart(cart.filter((a) => a.id !== item.id));
+  };
 
   return (
     <div className="mb-6 justify-between rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
       <img
         src={item.image}
         alt="product"
-        className="w-full rounded-lg sm:w-40 max-h-40"
+        className="max-h-40 w-full rounded-lg sm:w-40"
       />
       <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
         <div className="mt-5 sm:mt-0">
@@ -31,7 +35,7 @@ function CartItem({ item }) {
             </span>
           </div>
           <div className="flex items-center space-x-4">
-            <p className="text-sm">${item.price}</p>
+            <p className="text-sm">${item.price * item.quantity}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,6 +43,7 @@ function CartItem({ item }) {
               strokeWidth="1.5"
               stroke="currentColor"
               className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+              onClick={deleteItem}
             >
               <path
                 strokeLinecap="round"
