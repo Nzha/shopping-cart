@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-function Nav({ cart, setCart }) {
-  const handleClick = () => {
+function Nav({ cart }) {
+  const handleClickTemp = () => {
     console.table(cart);
   };
 
@@ -9,7 +9,7 @@ function Nav({ cart, setCart }) {
     <nav className="bg-gray-800">
       <div className="flex items-center justify-around p-4 text-white">
         {/* <Link to="/"> */}
-        <h3 className="cursor-pointer text-4xl" onClick={handleClick}>
+        <h3 className="cursor-pointer text-4xl" onClick={handleClickTemp}>
           FakeStore
         </h3>
         {/* </Link> */}
@@ -27,6 +27,11 @@ function Nav({ cart, setCart }) {
           <Link to="/about">
             <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
               About
+            </li>
+          </Link>
+          <Link to="/cart">
+            <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
+              Cart
             </li>
           </Link>
         </ul>
