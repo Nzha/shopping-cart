@@ -17,7 +17,7 @@ function ItemDetails({ addToCart }) {
 
   return (
     <div>
-      <section className="body-font overflow-hidden bg-gray-50 text-gray-700">
+      <section className="body-font overflow-hidden bg-gray-100 text-gray-700">
         <div className="container mx-auto px-5 py-24">
           <div className="mx-auto flex flex-wrap lg:w-4/5">
             <img

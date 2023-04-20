@@ -21,7 +21,7 @@ function CartTotal({ cart }) {
           </p>
         </div>
       </div>
-      <button className="mt-5 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+      <button className="mt-5 w-full rounded-md bg-red-500 py-1.5 font-medium text-blue-50 hover:bg-red-600">
         Check out
       </button>
     </div>
