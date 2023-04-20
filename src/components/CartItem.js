@@ -1,5 +1,24 @@
+import { useState } from 'react';
+
 function CartItem({ item, cart, setCart }) {
-  console.log(item);
+  const [quantity, setQuantity] = useState(item.quantity);
+
+  const updateQuantity = (delta) => {
+    if (quantity === 1 && delta === -1) return;
+    setQuantity((prevQuantity) => prevQuantity + delta);
+    const newCart = [...cart];
+    const newItem = newCart.find((a) => a.id === item.id);
+    newItem.quantity = quantity + delta;
+    setCart(newCart);
+  };
+
+  const decrementQuantity = () => {
+    updateQuantity(-1);
+  };
+
+  const incrementQuantity = () => {
+    updateQuantity(1);
+  };
 
   const deleteItem = () => {
     setCart(cart.filter((a) => a.id !== item.id));
@@ -19,7 +38,10 @@ function CartItem({ item, cart, setCart }) {
         </div>
         <div className="mt-4 flex justify-between sm:mt-0 sm:block sm:space-x-6 sm:space-y-6">
           <div className="flex items-center border-gray-100">
-            <span className="cursor-pointer rounded-l bg-gray-100 px-3.5 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50">
+            <span
+              className="cursor-pointer rounded-l bg-gray-100 px-3.5 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50"
+              onClick={decrementQuantity}
+            >
               {' '}
               -{' '}
             </span>
@@ -29,7 +51,10 @@ function CartItem({ item, cart, setCart }) {
               value={item.quantity}
               min="1"
             />
-            <span className="cursor-pointer rounded-r bg-gray-100 px-3 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50">
+            <span
+              className="cursor-pointer rounded-r bg-gray-100 px-3 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50"
+              onClick={incrementQuantity}
+            >
               {' '}
               +{' '}
             </span>
