@@ -136,7 +136,7 @@ function ItemDetails({ addToCart }) {
               <div className="mb-5 mt-6 flex items-center border-b-2 border-gray-200 "></div>
               <div className="flex">
                 <span className="title-font text-2xl font-medium text-gray-900">
-                  ${item.price}
+                  ${item.price?.toFixed(2)}
                 </span>
                 <button
                   className="ml-auto flex rounded border-0 bg-red-500 px-6 py-2 text-white hover:bg-red-600 focus:outline-none"

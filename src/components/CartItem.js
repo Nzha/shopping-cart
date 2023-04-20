@@ -37,7 +37,7 @@ function CartItem({ item, cart, setCart }) {
           {/* <p className="mt-1 text-xs text-gray-700">{item.description}</p> */}
         </div>
         <div className="mt-4 flex justify-between sm:mt-0 sm:block sm:space-x-6 sm:space-y-6">
-          <div className="flex items-center border-gray-100">
+          <div className="flex items-center justify-end border-gray-100">
             <span
               className="cursor-pointer rounded-l bg-gray-100 px-3.5 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50"
               onClick={decrementQuantity}
@@ -45,12 +45,9 @@ function CartItem({ item, cart, setCart }) {
               {' '}
               -{' '}
             </span>
-            <input
-              className="h-8 w-8 border bg-white text-center text-xs outline-none"
-              type="number"
-              value={item.quantity}
-              min="1"
-            />
+            <span className="flex h-8 w-8 items-center justify-center border bg-white text-center text-xs outline-none">
+              {item.quantity}
+            </span>
             <span
               className="cursor-pointer rounded-r bg-gray-100 px-3 py-1 duration-100 hover:bg-blue-500 hover:text-blue-50"
               onClick={incrementQuantity}
@@ -60,7 +57,9 @@ function CartItem({ item, cart, setCart }) {
             </span>
           </div>
           <div className="flex items-center space-x-4">
-            <p className="text-sm">${item.price * item.quantity}</p>
+            <p className="text-sm">
+              ${(item.price * item.quantity)?.toFixed(2)}
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
