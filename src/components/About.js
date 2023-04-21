@@ -1,8 +1,8 @@
 function About() {
   return (
     <div className="flex justify-center pt-10">
-      <div className="w-2/3 rounded-lg border border-gray-200 bg-white px-8 py-8 shadow dark:border-gray-700 dark:bg-gray-800">
-        <div className="flex justify-center text-2xl">
+      <div className="w-2/3 space-y-4 rounded-lg border border-gray-200 bg-white px-8 py-8 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div className="flex justify-center text-2xl font-bold">
           Welcome to The Bazaar
         </div>
         <p>Your one-stop-shop for all things trendy and affordable!</p>

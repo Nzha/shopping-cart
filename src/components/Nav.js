@@ -7,7 +7,7 @@ function Nav({ cart }) {
     <nav className="bg-gray-800">
       <div className="flex items-center justify-around p-6 text-white">
         <Link to="/">
-          <h3 className="cursor-pointer text-4xl">FakeStore</h3>
+          <h3 className="cursor-pointer text-4xl">The Bazaar</h3>
         </Link>
         <ul className="flex items-center gap-6 text-xl text-gray-200">
           <Link to="/">
