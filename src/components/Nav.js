@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 function Nav({ cart }) {
   const totalCartItems = cart.reduce((a, b) => a + b.quantity, 0);
@@ -7,21 +8,25 @@ function Nav({ cart }) {
     <nav className="bg-gray-800">
       <div className="flex items-center justify-around p-6 text-white">
         <Link to="/">
-          <h3 className="cursor-pointer text-4xl">The Bazaar</h3>
+          <img
+            alt="logo"
+            className="w-full object-contain object-center lg:w-44"
+            src={logo}
+          />
         </Link>
         <ul className="flex items-center gap-6 text-xl text-gray-200">
           <Link to="/">
-            <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
+            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white">
               Home
             </li>
           </Link>
           <Link to="/store">
-            <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
+            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white ">
               Store
             </li>
           </Link>
           <Link to="/about">
-            <li className="cursor-pointer rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">
+            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white ">
               About
             </li>
           </Link>
