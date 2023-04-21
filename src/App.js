@@ -10,6 +10,7 @@ import About from './components/About';
 import Store from './components/Store';
 import ItemDetails from './components/ItemDetails';
 import Cart from './components/Cart';
+import AddedToCart from './components/AddedToCart';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -60,6 +61,7 @@ function App() {
             path="/cart"
             element={<Cart cart={cart} setCart={setCart} />}
           />
+          <Route path="/added/:title" element={<AddedToCart />} />
         </Routes>
       </div>
     </Router>

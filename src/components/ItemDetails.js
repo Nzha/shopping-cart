@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function ItemDetails({ addToCart }) {
   const { id } = useParams();
@@ -138,12 +138,16 @@ function ItemDetails({ addToCart }) {
                 <span className="title-font text-2xl font-medium text-gray-900">
                   ${item.price?.toFixed(2)}
                 </span>
-                <button
-                  className="ml-auto flex rounded border-0 bg-red-500 px-6 py-2 text-white hover:bg-red-600 focus:outline-none"
-                  onClick={() => addToCart(item)}
-                >
-                  Add to cart
-                </button>
+                <div className="ml-auto">
+                  <Link to={`/added/${item.title}`}>
+                    <button
+                      className="flex rounded border-0 bg-red-500 px-6 py-2 text-white hover:bg-red-600 focus:outline-none"
+                      onClick={() => addToCart(item)}
+                    >
+                      Add to cart
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
