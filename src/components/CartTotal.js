@@ -1,6 +1,19 @@
+import { useState } from 'react';
+import PaymentModal from './PaymentModal';
+
 function CartTotal({ cart }) {
   const totalItems = cart.reduce((a, b) => a + b.price * b.quantity, 0);
   const shipping = 4.99;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
@@ -21,9 +34,17 @@ function CartTotal({ cart }) {
           </p>
         </div>
       </div>
-      <button className="mt-5 w-full rounded-md bg-red-500 py-1.5 font-medium text-blue-50 hover:bg-red-600">
+      <button
+        className="mt-5 w-full rounded-md bg-red-500 py-1.5 font-medium text-white hover:bg-red-600"
+        onClick={openModal}
+      >
         Check out
       </button>
+      <PaymentModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        closeModal={closeModal}
+      />
     </div>
   );
 }
