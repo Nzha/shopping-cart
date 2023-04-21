@@ -27,11 +27,13 @@ function Nav({ cart }) {
           </Link>
           <Link to="/cart">
             <div className="relative py-2">
-              <div className="t-2 absolute bottom-6 left-3">
-                <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
-                  {totalCartItems}
-                </p>
-              </div>
+              {cart.length > 0 && (
+                <div className="t-2 absolute bottom-6 left-3">
+                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                    {totalCartItems}
+                  </p>
+                </div>
+              )}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
