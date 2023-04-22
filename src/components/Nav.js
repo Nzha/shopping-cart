@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 function Nav({ cart }) {
@@ -10,26 +10,41 @@ function Nav({ cart }) {
         <Link to="/">
           <img
             alt="logo"
-            className="w-full object-contain object-center lg:w-44"
+            className="w-full object-contain object-center active:text-blue-500 lg:w-44"
             src={logo}
           />
         </Link>
         <ul className="flex items-center gap-6 text-xl text-gray-200">
-          <Link to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? 'rounded-md bg-gray-700 text-white' : ''
+            }
+          >
             <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white">
               Home
             </li>
-          </Link>
-          <Link to="/store">
-            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white ">
+          </NavLink>
+          <NavLink
+            to="/store"
+            className={({ isActive }) =>
+              isActive ? 'rounded-md bg-gray-700 text-white' : ''
+            }
+          >
+            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white">
               Store
             </li>
-          </Link>
-          <Link to="/about">
-            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white ">
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? 'rounded-md bg-gray-700 text-white' : ''
+            }
+          >
+            <li className="cursor-pointer rounded-md px-3 py-2 text-xl hover:bg-gray-700 hover:text-white">
               About
             </li>
-          </Link>
+          </NavLink>
           <Link to="/cart">
             <div className="relative py-2">
               {cart.length > 0 && (
