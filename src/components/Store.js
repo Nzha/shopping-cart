@@ -29,7 +29,7 @@ function Store({ addToCart }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-8 px-8 py-10">
+      <div className="flex flex-wrap justify-center gap-8 px-8 py-14">
         {loading && <Loading />}
         {!loading && listItems}
       </div>

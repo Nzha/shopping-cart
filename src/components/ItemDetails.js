@@ -151,6 +151,11 @@ function ItemDetails({ addToCart }) {
               </div>
             </div>
           </div>
+          <Link to="/store">
+            <p className="flex justify-center pt-14 text-red-500 underline">
+              Back to store
+            </p>
+          </Link>
         </div>
       </section>
     </div>
