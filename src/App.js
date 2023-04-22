@@ -11,6 +11,7 @@ import Store from './components/Store';
 import ItemDetails from './components/ItemDetails';
 import Cart from './components/Cart';
 import AddedToCart from './components/AddedToCart';
+import Footer from './components/Footer';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -47,22 +48,25 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="flex min-h-screen flex-col bg-gray-100">
         <Nav cart={cart} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/store" element={<Store addToCart={addToCart} />} />
-          <Route
-            path="/store/:id"
-            element={<ItemDetails addToCart={addToCart} />}
-          />
-          <Route
-            path="/cart"
-            element={<Cart cart={cart} setCart={setCart} />}
-          />
-          <Route path="/added/:title" element={<AddedToCart />} />
-        </Routes>
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/store" element={<Store addToCart={addToCart} />} />
+            <Route
+              path="/store/:id"
+              element={<ItemDetails addToCart={addToCart} />}
+            />
+            <Route
+              path="/cart"
+              element={<Cart cart={cart} setCart={setCart} />}
+            />
+            <Route path="/added/:title" element={<AddedToCart />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   );
