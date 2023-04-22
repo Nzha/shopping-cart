@@ -19,8 +19,6 @@ function App() {
     return storedCart || [];
   });
 
-  // localStorage.clear();
-
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
