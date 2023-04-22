@@ -3,6 +3,15 @@ import storeImg from '../assets/store.jpg';
 
 function Home() {
   return (
+    <>
+      <HeroSection />
+      <SubHeroSection />
+    </>
+  );
+}
+
+function HeroSection() {
+  return (
     <div>
       <div className="mx-auto grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
         <div className="mr-auto place-self-center lg:col-span-7">
@@ -35,6 +44,40 @@ function Home() {
         <div className="hidden lg:col-span-5 lg:mt-0 lg:flex">
           <img src={storeImg} alt="mockup" className="rounded-2xl" />
         </div>
+      </div>
+    </div>
+  );
+}
+
+function SubHeroSection() {
+  return (
+    <div className="mx-auto hidden max-w-screen-xl justify-between gap-20 border-y border-gray-100 py-8 dark:border-gray-800 sm:flex">
+      <div className="text-left">
+        <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+          The lowest price
+        </h6>
+        <p className="mt-2 text-gray-500">
+          Our lowest price guarantee ensures that you'll always find the best
+          deals on high-quality products{' '}
+        </p>
+      </div>
+      <div className="text-left">
+        <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+          The fastest on the market
+        </h6>
+        <p className="mt-2 text-gray-500">
+          With lightning-fast delivery options, you can get your hands on your
+          favorite products in no time.
+        </p>
+      </div>
+      <div className="text-left">
+        <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+          The most loved
+        </h6>
+        <p className="mt-2 text-gray-500">
+          Join the thousands of happy customers who have fallen in love with our
+          products!
+        </p>
       </div>
     </div>
   );
