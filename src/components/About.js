@@ -1,10 +1,8 @@
 function About() {
   return (
-    <div className="flex justify-center px-10 pt-10">
+    <div className="flex flex-col items-center px-10 pt-10">
+      <h1 className="mb-10 text-center text-2xl font-bold">About us</h1>
       <div className="space-y-4 rounded-lg border border-gray-200 bg-white px-8 py-8 shadow dark:border-gray-700 dark:bg-gray-800 xl:w-2/3">
-        <div className="flex justify-center text-2xl font-bold">
-          Welcome to The Bazaar
-        </div>
         <p>Your one-stop-shop for all things trendy and affordable!</p>
         <p>
           We are an online store dedicated to bringing you the latest fashion
