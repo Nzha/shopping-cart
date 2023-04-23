@@ -1,4 +1,4 @@
-function Loading() {
+function StoreLoading() {
   const numberOfSkeletonCards = 8;
 
   return (
@@ -44,4 +44,4 @@ function SkeletonCard() {
   );
 }
 
-export default Loading;
+export default StoreLoading;

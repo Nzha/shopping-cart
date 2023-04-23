@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import StoreItem from './StoreItem';
-import Loading from './Loading';
+import StoreLoading from './StoreLoading';
 
 function Store({ addToCart }) {
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ function Store({ addToCart }) {
   return (
     <div>
       <div className="flex flex-wrap justify-center gap-8 px-8 py-14">
-        {loading && <Loading />}
+        {loading && <StoreLoading />}
         {!loading && listItems}
       </div>
     </div>

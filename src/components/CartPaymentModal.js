@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-function PaymentModal({ isOpen, closeModal }) {
+function CartPaymentModal({ isOpen, closeModal }) {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -76,4 +76,4 @@ function PaymentModal({ isOpen, closeModal }) {
   );
 }
 
-export default PaymentModal;
+export default CartPaymentModal;

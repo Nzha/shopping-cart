@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PaymentModal from './PaymentModal';
+import CartPaymentModal from './CartPaymentModal';
 
 function CartTotal({ cart }) {
   const totalItems = cart.reduce((a, b) => a + b.price * b.quantity, 0);
@@ -40,7 +40,7 @@ function CartTotal({ cart }) {
       >
         Check out
       </button>
-      <PaymentModal
+      <CartPaymentModal
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         closeModal={closeModal}
